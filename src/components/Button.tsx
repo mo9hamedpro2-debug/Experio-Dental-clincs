@@ -11,6 +11,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
   className?: string;
+  title?: string;
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
   target?: string;
@@ -27,6 +28,7 @@ export const Button: React.FC<ButtonProps> = ({
   type = 'button',
   disabled = false,
   className = '',
+  title,
   icon,
   iconPosition = 'left',
   target,
@@ -64,7 +66,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   if (to) {
     return (
-      <Link to={to} className={`${baseStyles} ${sizeStyles} ${variantStyles} ${className}`}>
+      <Link to={to} title={title} className={`${baseStyles} ${sizeStyles} ${variantStyles} ${className}`}>
         {content}
       </Link>
     );
@@ -74,6 +76,7 @@ export const Button: React.FC<ButtonProps> = ({
     return (
       <a
         href={href}
+        title={title}
         target={target}
         rel={rel || (target === '_blank' ? 'noopener noreferrer' : undefined)}
         className={`${baseStyles} ${sizeStyles} ${variantStyles} ${className}`}
@@ -86,6 +89,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type={type}
+      title={title}
       onClick={onClick}
       disabled={disabled}
       className={`${baseStyles} ${sizeStyles} ${variantStyles} ${className}`}

@@ -72,6 +72,18 @@ Designed as a presentation proposal for the clinic owner, this project embodies 
 - **FAQ Page (`/faq`)**:
   - Categorized accordion (Appointments, Location, Consultation, General)
 
+- **Reception Management Portal (`/reception`)**:
+  - Secure PIN-protected staff dashboard (Demo PIN: `experio2026`)
+  - Live real-time incoming appointment queue
+  - Status management (Pending Review, Contacted, Confirmed, Cancelled)
+  - Search by patient name or phone number
+  - Filter tabs by status
+  - One-click patient direct call (`tel:`)
+  - One-click prefilled WhatsApp confirmation message
+  - Internal clinic notes saving
+  - One-click export to CSV / Excel for reception records
+  - Sample preloaded demo inquiries + automatic live synchronization with booking form
+
 - **Privacy & Medical Disclaimer (`/privacy`)**:
   - Complete legal disclosure regarding website concept proposal status, non-collection of sensitive patient health records, and clinical consultation requirements.
 

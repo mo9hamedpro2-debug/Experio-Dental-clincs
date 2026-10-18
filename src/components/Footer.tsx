@@ -10,6 +10,7 @@ import {
   ExternalLink,
   ShieldAlert,
   ArrowUpRight,
+  Lock,
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -134,13 +135,24 @@ export const Footer: React.FC = () => {
               <p className="leading-relaxed">
                 {t.disclaimer.verificationNotice}
               </p>
-              <Link
-                to="/privacy"
-                className="inline-flex items-center gap-1 text-[#2BA0A7] hover:text-white transition-colors text-xs font-medium pt-1"
-              >
-                <span>{t.footer.privacyLink}</span>
-                <ArrowUpRight className="w-3 h-3" />
-              </Link>
+              <div className="pt-1 flex items-center justify-between">
+                <Link
+                  to="/privacy"
+                  className="inline-flex items-center gap-1 text-[#2BA0A7] hover:text-white transition-colors text-xs font-medium"
+                >
+                  <span>{t.footer.privacyLink}</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </Link>
+
+                <Link
+                  to="/reception"
+                  className="inline-flex items-center gap-1 text-white/50 hover:text-white transition-colors text-xs"
+                  title="Reception Portal"
+                >
+                  <Lock className="w-3 h-3 text-[#2BA0A7]" />
+                  <span>{isRtl ? 'الاستقبال' : 'Reception'}</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

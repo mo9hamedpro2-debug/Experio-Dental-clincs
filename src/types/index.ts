@@ -91,6 +91,16 @@ export interface AppointmentRequest {
   consentGiven: boolean;
 }
 
+export type AppointmentStatus = 'pending' | 'contacted' | 'confirmed' | 'cancelled';
+
+export interface StoredAppointment extends AppointmentRequest {
+  id: string;
+  createdAt: string;
+  status: AppointmentStatus;
+  internalNotes?: string;
+  isDemoSample?: boolean;
+}
+
 export interface FAQItem {
   id: string;
   category: 'appointments' | 'location' | 'consultation' | 'general';

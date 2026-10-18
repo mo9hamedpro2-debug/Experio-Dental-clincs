@@ -16,6 +16,7 @@ import { Booking } from './pages/Booking';
 import { Contact } from './pages/Contact';
 import { FAQ } from './pages/FAQ';
 import { Privacy } from './pages/Privacy';
+import { ReceptionPortal } from './pages/ReceptionPortal';
 import { NotFound } from './pages/NotFound';
 
 // Scroll to top on route navigation
@@ -57,6 +58,7 @@ export const App: React.FC = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy" element={<Privacy />} />
+              <Route path="/reception" element={<ReceptionPortal />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

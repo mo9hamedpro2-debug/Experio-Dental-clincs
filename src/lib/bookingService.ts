@@ -1,5 +1,6 @@
 import type { AppointmentRequest, Language } from '../types';
 import { clinicData } from '../data/clinicData';
+import { saveNewAppointment } from './appointmentStore';
 
 export interface BookingSubmissionResult {
   success: boolean;
@@ -66,8 +67,11 @@ export function getWhatsAppUrl(request: AppointmentRequest, lang: Language): str
  * In concept mode without a configured backend, it provides a safe, transparent demo response.
  */
 export async function submitAppointmentRequest(
-  _request: AppointmentRequest
+  request: AppointmentRequest
 ): Promise<BookingSubmissionResult> {
+  // Always save locally to reception dashboard store
+  saveNewAppointment(request);
+
   const apiUrl = import.meta.env.VITE_BOOKING_API_URL;
 
   if (apiUrl) {
@@ -75,7 +79,7 @@ export async function submitAppointmentRequest(
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(_request),
+        body: JSON.stringify(request),
       });
 
       if (!response.ok) {
@@ -92,12 +96,12 @@ export async function submitAppointmentRequest(
     }
   }
 
-  // Safe demo simulation: 700ms simulated latency
-  await new Promise((resolve) => setTimeout(resolve, 700));
+  // Safe demo simulation: 600ms simulated latency
+  await new Promise((resolve) => setTimeout(resolve, 600));
 
   return {
     success: true,
     mode: 'demo',
-    message: 'Demo mode: Appointment request simulated successfully.',
+    message: 'Demo mode: Appointment request recorded in reception portal.',
   };
 }
