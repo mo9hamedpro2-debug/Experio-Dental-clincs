@@ -1,0 +1,25 @@
+import type { ClinicInfo } from '../types';
+
+export const clinicData: ClinicInfo = {
+  name: 'Experio Dental Clinics',
+  nameAr: 'عيادات إكسبيريو لطب الأسنان',
+  tagline: 'Refined Care. Confident Smiles.',
+  taglineAr: 'رعاية متقنة. ابتسامة واثقة.',
+  streetAddress: '24 Shaarawy Street, above iScan Center, 1st Floor',
+  streetAddressAr: '٢٤ شارع شعراوي، أعلى مركز آي سكان، الدور الأول',
+  landmark: 'Above iScan Center',
+  landmarkAr: 'أعلى مركز آي سكان (iScan)',
+  district: 'Louran',
+  districtAr: 'لوران',
+  city: 'Alexandria',
+  cityAr: 'الإسكندرية',
+  country: 'Egypt',
+  countryAr: 'مصر',
+  mobile: '01029720243',
+  mobileDisplay: '0102 972 0243',
+  landline: '035852955',
+  landlineDisplay: '03 585 2955',
+  googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Experio+Dental+Clinics+24+Shaarawy+Louran+Alexandria',
+  whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || '201029720243',
+  isPreliminaryResearch: true,
+};

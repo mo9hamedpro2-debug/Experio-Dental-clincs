@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #102A43;
+  --color-navy-dark: #0B1D2E;
+  --color-navy-light: #1C3D5A;
+  --color-teal: #147D83;
+  --color-teal-dark: #0E6166;
+  --color-teal-light: #2BA0A7;
+  --color-teal-surface: #EAF4F3;
+  --color-teal-soft: #F2F8F8;
+  --color-warm-white: #F8F7F3;
+  --color-muted: #667085;
+  --color-muted-dark: #475467;
+  --color-border-subtle: #E2E8F0;
+
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-arabic: "Cairo", "Tajawal", "Segoe UI", system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+[dir="rtl"] {
+  font-family: var(--font-arabic);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #F8F7F3;
+  color: #102A43;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom typographic wordmark styling */
+.experio-wordmark {
+  letter-spacing: 0.22em;
+  font-weight: 700;
+}
+
+.experio-wordmark-sub {
+  letter-spacing: 0.32em;
+  font-weight: 500;
+}
+
+/* Focus outline for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #147D83;
+  outline-offset: 2px;
+}
+
+/* Smooth motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
